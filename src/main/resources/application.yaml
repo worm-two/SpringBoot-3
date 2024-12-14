@@ -1,0 +1,25 @@
+server:
+  port: 7878
+
+date: yyyy-MM-dd
+time: HH:mm:ss
+datetime: yyyy-MM-dd HH:mm:ss
+timezone: GMT+8
+
+spring:
+  application:
+    name: mongo-service
+  jackson:
+    time-zone: ${timezone}
+    date-format: ${datetime}
+  data:
+    mongodb:
+      host: 192.168.2.82
+      port: 27017
+      database: mongo_study
+      username: root
+      password: root
+      authentication-database: admin
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+      auto-index-creation: true
+#      uri: mongodb://root:root@192.168.2.82:27017/mongo_study?authSource=admin&authMechanism=SCRAM-SHA-1
